@@ -18,8 +18,8 @@ public class zpawner : MonoBehaviour
     IEnumerator spawnZombie()
     {
         Vector3 pos = new Vector3(Random.Range(minPos, maxPos), 5.53f, 0);
-        zb = Instantiate(zombie, pos, zombie.transform.rotation);
-        int spawnerTime = Random.Range(2, 5);
+        zb = Instantiate(zombie, pos, Quaternion.identity);
+        int spawnerTime = Random.Range(1, 3);
         yield return new WaitForSeconds(spawnerTime);
         StartCoroutine(spawnZombie());
     }
